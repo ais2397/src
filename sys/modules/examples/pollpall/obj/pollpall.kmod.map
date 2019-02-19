@@ -1,0 +1,69 @@
+
+Discarded input sections
+
+ .comment       0x0000000000000000       0x22 pollpall.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+
+.text           0x0000000000000000      0x5e5
+ .text          0x0000000000000000      0x5e5 pollpall.o
+                0x0000000000000000                pollpall_open
+                0x0000000000000023                pollpall_close
+                0x0000000000000032                pollpall_write
+                0x00000000000001b0                pollpall_read
+                0x000000000000040c                pollpall_poll
+                0x00000000000005a4                check_pall
+
+.rodata.str1.1  0x0000000000000000      0x122
+ .rodata.str1.1
+                0x0000000000000000      0x122 pollpall.o
+
+.rodata.str1.8  0x0000000000000000       0x1f
+ .rodata.str1.8
+                0x0000000000000000       0x1f pollpall.o
+
+link_set_modules
+                0x0000000000000000        0x8
+ link_set_modules
+                0x0000000000000000        0x8 pollpall.o
+
+.rodata         0x0000000000000000       0x20
+ .rodata        0x0000000000000000       0x20 pollpall.o
+
+.eh_frame       0x0000000000000000      0x140
+ .eh_frame      0x0000000000000000      0x140 pollpall.o
+                                        0x138 (size before relaxing)
+
+.data           0x0000000000000000       0xd8
+ *(.data)
+ .data          0x0000000000000000       0x60 pollpall.o
+ *(.bss)
+ .bss           0x0000000000000060       0x78 pollpall.o
+ *(.bss.*)
+ *(COMMON)
+                0x0000000000000100                . = ALIGN (0x40)
+
+.data.cacheline_aligned
+ *(.data.cacheline_aligned)
+                0x0000000000000100                . = ALIGN (0x40)
+
+.data.read_mostly
+ *(.data.read_mostly)
+                0x0000000000000100                . = ALIGN (0x40)
+
+/DISCARD/
+ *(.comment)
+LOAD pollpall.o
+OUTPUT(pollpall.kmod elf64-x86-64)
+
+.ident          0x0000000000000000       0x35
+ .ident         0x0000000000000000       0x35 pollpall.o
+
+.SUNW_ctf       0x0000000000000000     0x3667
+ .SUNW_ctf      0x0000000000000000     0x3667 pollpall.o
